@@ -156,7 +156,7 @@ def admin():
 
     print('adminussy')
     users=fetch_users();
-    db = psycopg2.connect(os.environ["DATABASE_URL"])
+    db = psycopg2.connect("postgresql://vishal:ooEnOQCXqI-98MQHB9Z0GA@balls-ack-6317.6xw.aws-ap-southeast-1.cockroachlabs.cloud:26257/edgar?sslmode=verify-full&sslrootcert=root.crt")
     cursor = db.cursor()
     usernames = users.keys()
     for user in usernames:
@@ -197,7 +197,7 @@ def customise():
     print(request.files)
     move_images(current_user['username'], current_user['user_id'],files)
 
-    db = psycopg2.connect(os.environ["DATABASE_URL"])
+    db = psycopg2.connect("postgresql://vishal:ooEnOQCXqI-98MQHB9Z0GA@balls-ack-6317.6xw.aws-ap-southeast-1.cockroachlabs.cloud:26257/edgar?sslmode=verify-full&sslrootcert=root.crt")
     cursor = db.cursor()
 
     images = fetch_images(users[current_user['username']]['user_id'])
@@ -221,6 +221,7 @@ def preview():
     transitions.clear()
     durations.clear()
     resolutions.clear()
+    music_track = "yourNewHome"
 
     # Get data from the form
     if request.method=='POST':
@@ -255,4 +256,4 @@ def download_video():
     return send_file(video_path, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(port="10000")
+    app.run(debug=True)
