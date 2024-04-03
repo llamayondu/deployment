@@ -1,2 +1,3 @@
 import os
-print(os.environ)
+def print_os():
+    print(os.environ)

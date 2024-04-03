@@ -11,10 +11,13 @@ import numpy as np
 import base64
 import io
 import os
+import env_check
 
 def export_db_url_to_env():
     os.environ["DATABASE_URL"] = "postgresql://vishal:ooEnOQCXqI-98MQHB9Z0GA@balls-ack-6317.6xw.aws-ap-southeast-1.cockroachlabs.cloud:26257/edgar?sslmode=verify-full&sslrootcert=root.crt"
 export_db_url_to_env()
+# env_check.print_os()
+print(os.environ)
 
 def image_to_base64(image):
     # Convert the pixel values to a NumPy array
@@ -242,4 +245,4 @@ def download_video():
     return send_file(video_path, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True, port="5001")
+    app.run(debug=True, port="10000")
