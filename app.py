@@ -19,6 +19,16 @@ export_db_url_to_env()
 # env_check.print_os()
 print(os.environ)
 
+def get_db_connection():
+    cert_decoded = base64.b64decode(os.environ['R00T_CERT_BASE64'])
+    cert_path = '/opt/render/.postgresql/root.crt'
+    os.makedirs(os.path.dirname(cert_path), exist_ok=True)
+    with open(cert_path, 'wb') as cert_file: 
+        cert_file.write(cert_decoded)
+
+get_db_connection()
+
+
 def image_to_base64(image):
     # Convert the pixel values to a NumPy array
     np_image = np.array(image, dtype=np.uint8)
