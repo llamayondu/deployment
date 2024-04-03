@@ -36,6 +36,7 @@ MarkupSafe==2.1.4
 matplotlib==3.8.3
 menuinst @ file:///croot/menuinst_1702390294373/work
 moviepy==1.0.3
+mutagen==1.47.0
 mysql-connector-python==8.3.0
 numpy==1.26.4
 opencv-python==4.9.0.80
