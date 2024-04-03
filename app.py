@@ -10,7 +10,11 @@ from PIL import Image
 import numpy as np
 import base64
 import io
+import os
 
+def export_db_url_to_env():
+    os.environ["DATABASE_URL"] = "postgresql://vishal:V-03QMzLnRkYxKRDs2NXbg@balls-ack-6317.6xw.aws-ap-southeast-1.cockroachlabs.cloud:26257/edgar?sslmode=require&sslrootcert=root.crt"
+export_db_url_to_env()
 
 def image_to_base64(image):
     # Convert the pixel values to a NumPy array
@@ -48,6 +52,7 @@ app.config['JWT_COOKIE_CSRF_PROTECT'] = False
 jwt = JWTManager(app)
 
 users = fetch_users()
+
 
 def get_user_data(username):
     users=fetch_users()
