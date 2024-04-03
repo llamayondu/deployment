@@ -13,7 +13,7 @@ import io
 import os
 
 def export_db_url_to_env():
-    os.environ["DATABASE_URL"] = "postgresql://vishal:ooEnOQCXqI-98MQHB9Z0GA@balls-ack-6317.6xw.aws-ap-southeast-1.cockroachlabs.cloud:26257/edgar?sslmode=require&sslrootcert=root.crt"
+    os.environ["DATABASE_URL"] = "postgresql://vishal:ooEnOQCXqI-98MQHB9Z0GA@balls-ack-6317.6xw.aws-ap-southeast-1.cockroachlabs.cloud:26257/edgar?sslmode=verify-full&sslrootcert=root.crt"
 export_db_url_to_env()
 
 def image_to_base64(image):
